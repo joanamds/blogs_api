@@ -12,7 +12,8 @@ module.exports = {
       displayName: {
         allowNull: false,
         unique: true,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        field: 'display_name'
       },
       email: {
         allowNull: false,
@@ -27,10 +28,13 @@ module.exports = {
         allowNull: true,
         type: Sequelize.STRING
       }
-    })
+    }, {
+      underscored: true,
+    });
   },
 
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('users')
   }
 };
+
