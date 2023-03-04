@@ -11,7 +11,6 @@ module.exports = {
       },
       displayName: {
         allowNull: false,
-        unique: true,
         type: Sequelize.STRING,
         field: 'display_name'
       },
