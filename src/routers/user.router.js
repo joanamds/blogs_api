@@ -1,4 +1,5 @@
 const express = require('express');
+const { validateToken } = require('../auth/validateJWT');
 const userController = require('../controllers/user.controller');
 const {
   validateEmail,
@@ -12,5 +13,7 @@ router.post('/',
   validatePassword,
   validateDisplayName,
   userController.createUser);
+
+router.get('/', validateToken, userController.getUsers);
 
 module.exports = router;
