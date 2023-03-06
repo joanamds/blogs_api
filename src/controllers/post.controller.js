@@ -62,6 +62,7 @@ const deletePost = async (req, res) => {
     });
   }
 
+  await postService.deletePost(id);
   return res.status(204).send();
 };
 
