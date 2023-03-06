@@ -30,8 +30,27 @@ const getPostWithId = async (req, res) => {
   return res.status(200).json(getPost);
 };
 
+const updatePost = async (req, res) => {
+  const { authorization } = req.headers;
+  const { id } = req.params;
+  const { title, content } = req.body;
+  const decodedToken = jwt.verify(authorization, secret);
+  const { userId } = decodedToken.data;
+  const getPost = await postService.getPostWithId(id);
+  if (getPost.dataValues.userId !== userId) {
+    return res.status(401).send({
+      message: 'Unauthorized user',
+    });
+  }
+  
+  const updatedPost = await postService.updatePost(id, title, content);
+
+  return res.status(200).json(updatedPost);
+};
+
 module.exports = {
   createPost,
   getAllPosts,
   getPostWithId,
+  updatePost,
 };
