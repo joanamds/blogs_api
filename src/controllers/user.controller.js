@@ -1,5 +1,5 @@
 const userService = require('../services/user.service');
-const { jwt, secret, jwtConfig } = require('../auth/validateJWT');
+const { jwt, secret, jwtConfig, decodedToken } = require('../auth/validateJWT');
 
 const createUser = async (req, res) => {
   const { displayName, email, password, image } = req.body;
@@ -33,15 +33,16 @@ const getUserById = async (req, res) => {
   return res.status(200).json(user);
 };
 
-// const deleteUser = async (req, res) => {
-//   const { authorization } = req.headers;
-//   const getUserId = decodedToken(authorization);
-//   const 
-// }
+const deleteUser = async (req, res) => {
+  const { authorization } = req.headers;
+  const getId = decodedToken(authorization);
+  await userService.deleteUser(getId);
+  return res.status(204).send();
+};
 
 module.exports = {
   createUser,
   getUsers,
   getUserById,
-  // deleteUser,
+  deleteUser,
 };
