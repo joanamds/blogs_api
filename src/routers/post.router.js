@@ -6,5 +6,5 @@ const { validateNewPost } = require('../middlewares/validations');
 const router = express.Router();
 
 router.post('/', validateToken, validateNewPost, postController.createPost);
-
+router.get('/', validateToken, postController.getAllPosts);
 module.exports = router;
