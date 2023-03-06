@@ -1,4 +1,5 @@
 const loginService = require('../services/login.service');
+const categoryService = require('../services/category.service');
 
 const validateLoginBody = (req, res, next) => {
   const { email, password } = req.body;
@@ -47,9 +48,27 @@ const validatePassword = (req, res, next) => {
   next();
 };
 
+const validateNewPost = async (req, res, next) => {
+  const { title, content, categoryIds } = req.body;
+  const categories = await categoryService.getAllCategories();
+  const getId = categories.map((category) => category.id);
+  if (!title || !content) {
+    return res.status(400).json({ message: 'Some required fields are missing' });
+  }
+
+  if (categoryIds.some((categoryId) => !getId.includes(categoryId))) {
+    return res.status(400).json({
+      message: 'one or more "categoryIds" not found',
+    });
+  }
+
+  next();
+};
+
 module.exports = {
   validateLoginBody,
   validateEmail,
   validateDisplayName,
   validatePassword,
+  validateNewPost,
 };

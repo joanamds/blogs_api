@@ -3,18 +3,26 @@ const PostCategory = (sequelize, DataTypes) => {
     postId: {
       type: DataTypes.INTEGER,
       foreignKey: true,
+      references: {
+        model: 'BlogPost',
+        key: 'id'
+      },
     },
     categoryId: {
       type: DataTypes.INTEGER,
       foreignKey: true,
+      references: {
+        model: 'Categories',
+        key: 'id'
+      },
     },
   },
-  {
-    tableName: 'posts_categories',
-    timestamps: false,
-    underscored: true
+    {
+      tableName: 'posts_categories',
+      timestamps: false,
+      underscored: true
     });
-  
+
   postcategory.associate = ({ BlogPost, Category }) => {
     BlogPost.belongsToMany(Category, {
       as: 'blog_posts',
