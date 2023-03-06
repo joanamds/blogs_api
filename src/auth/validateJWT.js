@@ -30,9 +30,16 @@ const validateToken = async (req, res, next) => {
   next();
 };
 
+const decodedToken = (authorization) => {
+  const decoded = jwt.verify(authorization, secret);
+  const { userId } = decoded.data;
+  return userId;
+};
+
 module.exports = {
   secret,
   jwtConfig,
   jwt,
   validateToken,
+  decodedToken,
 };
