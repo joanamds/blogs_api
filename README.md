@@ -1,5 +1,84 @@
 # Blogs API :computer:
 
+## Endpoints
+<table>
+  <thead>
+    <tr>
+      <th>Método HTTP</th>
+      <th>Endpoint</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>POST</td>
+      <td>/login</td>
+      <td>Valida o usuário que está fazendo login e gera um token</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/user</td>
+      <td>Cria um novo usuário e gera um token</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/user</td>
+      <td>Lista todos os usuários cadastrados :key:</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/user/:id</td>
+      <td>Traz o usuário que possui determinado id :key: </td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>/user/me</td>
+      <td>Deleta o usuário que está logado :key: </td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/categories</td>
+      <td>Cria uma nova categoria de posts :key: </td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/categories</td>
+      <td>Lista todas as categorias :key: </td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/post</td>
+      <td>Lista todas as postagens :key: </td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/post/:id</td>
+      <td>Lista todas a postagem de acordo com seu id :key: </td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>/post/:id</td>
+      <td>Deleta o post de acordo com seu id e se o post pertence ao usuário que está logado :key: </td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/post</td>
+      <td>Cria uma nova postagem :key: </td>
+    </tr>
+    <tr>
+      <td>PUT</td>
+      <td>/post/:id</td>
+      <td>Edita a postagem de acordo com o id e se o post pertence ao usuário que está logado :key: </td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/post/search</td>
+      <td>Procura postagens de acordo com seu nome ou conteúdo :key: </td>
+    </tr>
+  </tbody>
+</table>
+:key: - Os endpoints que possui este símbolo em sua descrição precisam conter o token gerado nas rotas POST /login ou POST /user nos headers de suas requisições com o nome "Authorization".
+
 ## Tecnologias usadas
 Back-end:
 > Desenvolvido usando: Docker, docker-compose, MySQL, Node.js, Sequelize
