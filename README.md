@@ -77,7 +77,9 @@
     </tr>
   </tbody>
 </table>
-:key: - Os endpoints que possui este símbolo em sua descrição precisam conter o token gerado nas rotas POST /login ou POST /user nos headers de suas requisições com o nome "Authorization".
+:key: - Os endpoints que possui este símbolo em sua descrição precisam conter o token gerado nas rotas POST /login ou POST /user nos headers de suas requisições com o nome "Authorization" da seguinte forma: 
+
+[screen-recording.webm](https://user-images.githubusercontent.com/106452876/224504459-8efb1f47-ac1f-46b7-9800-5238a876f871.webm)
 
 ## Tecnologias usadas
 Back-end:
