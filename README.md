@@ -1,10 +1,58 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Blogs API 
+
+## Tecnologias usadas
+Back-end:
+> Desenvolvido usando: Docker, docker-compose, MySQL, Node.js, Sequelize
+
+## Instalando Dependências
+### Com Docker
+> Backend
+
+* Primeiro instale os containers: 
+```bash
+docker-compose up -d
+``` 
+
+* Em seguida abra o terminal interativo do container: 
+```bash
+docker exec -it blogs_api bash
+``` 
+
+* Instale as dependências dentro do container: 
+```bash
+npm install
+``` 
+
+> Para rodar a API 
+
+* Rode o seguinte comando dentro do container: 
+```bash
+npm run debug
+```
+
+> Testes
+
+* Dentro do terminal do container:
+```bash
+npm test
+``` 
+
+### Sem Docker
+
+* Instale as dependências [Caso existam]
+```bash
+npm install
+``` 
+
+* Renomeie o arquivo '.env.example' para '.env'
+* Certifique-se que o MySQL está rodando com as configurações necessárias do arquivo '.env'
+* Execute a aplicação com 
+```bash
+npm start
+```
+
+Ou: 
+
+```bash
+npm run debug
+```
