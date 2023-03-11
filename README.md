@@ -85,7 +85,7 @@ Esta API foi desenvolvida para gerenciar postagens de blog e usuários associado
 
 ## Tecnologias usadas
 Back-end:
-> Desenvolvido usando: Docker, docker-compose, MySQL, Node.js, Sequelize
+> Desenvolvido usando: Docker, docker-compose, MySQL, Node.js, Sequelize, JSON Web Token(JWT)
 
 ## Instalando Dependências
 ### Com Docker
