@@ -1,4 +1,4 @@
-# Blogs API 
+# Blogs API :computer:
 
 ## Tecnologias usadas
 Back-end:
