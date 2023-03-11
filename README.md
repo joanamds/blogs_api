@@ -1,5 +1,7 @@
 # Blogs API :computer:
 
+Esta API foi desenvolvida para gerenciar postagens de blog e usuários associados. É possível criar, editar e excluir postagens e usuários, além de buscar postagens por nome ou conteúdo.
+
 ## Endpoints
 <table>
   <thead>
