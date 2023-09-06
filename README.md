@@ -83,13 +83,28 @@ Neste projeto foi preciso desenvolver uma API para gerenciar postagens de blog e
 
 [screen-recording.webm](https://user-images.githubusercontent.com/106452876/224504459-8efb1f47-ac1f-46b7-9800-5238a876f871.webm)
 
-## Tecnologias usadas
-Back-end:
-> Desenvolvido usando: Docker, docker-compose, MySQL, Node.js, Sequelize, JSON Web Token(JWT)
+<details>
+  <summary> <strong> 🔽 Instalando as dependências </strong></summary>
+  
+- Clone o projeto
 
-## Instalando Dependências
-### Com Docker
-> Backend
+```bash
+  git clone git@github.com:joanamds/blogs_api.git
+```
+
+- Entre no diretório do projeto
+
+```bash
+  cd blogs_api
+```
+
+- Instale as dependências
+
+```bash
+  npm install
+```
+
+### 🐳 Com Docker
 
 * Primeiro instale os containers: 
 ```bash
@@ -105,20 +120,24 @@ docker exec -it blogs_api bash
 ```bash
 npm install
 ``` 
+</details>
 
-> Para rodar a API 
+<details>
+  <summary> <strong> 🚀 Para rodar a API </strong></summary>
+  
+### 🐳 Com Docker
+  
+* Entre no terminal interativo do container:
+```bash
+docker exec -it blogs_api bash
+``` 
 
 * Rode o seguinte comando dentro do container: 
 ```bash
 npm run debug
 ```
 
-### Sem Docker
-
-* Instale as dependências [Caso existam]
-```bash
-npm install
-``` 
+### 🏃Sem Docker
 
 * Renomeie o arquivo '.env.example' para '.env'
 * Certifique-se que o MySQL está rodando com as configurações necessárias do arquivo '.env'
@@ -126,12 +145,16 @@ npm install
 ```bash
 npm start
 ```
-
 Ou: 
 
 ```bash
 npm run debug
 ```
+</details>
+
+## Tecnologias usadas
+Back-end:
+> Desenvolvido usando: Docker, docker-compose, MySQL, Node.js, Sequelize, JSON Web Token(JWT)
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://joanamds.github.io/#/)
